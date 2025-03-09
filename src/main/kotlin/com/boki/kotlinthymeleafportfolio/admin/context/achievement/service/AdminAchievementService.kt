@@ -1,9 +1,11 @@
 package com.boki.kotlinthymeleafportfolio.admin.context.achievement.service
 
+import com.boki.kotlinthymeleafportfolio.admin.context.achievement.form.AchievementForm
 import com.boki.kotlinthymeleafportfolio.admin.data.TableDTO
 import com.boki.kotlinthymeleafportfolio.domain.entity.Achievement
 import com.boki.kotlinthymeleafportfolio.domain.repository.AchievementRepository
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 
 @Service
 class AdminAchievementService(
@@ -15,5 +17,17 @@ class AdminAchievementService(
         val entities = achievementRepository.findAll()
 
         return TableDTO.from(classInfo, entities)
+    }
+
+    @Transactional
+    fun save(form: AchievementForm) {
+        val achievement = form.toEntity()
+        achievementRepository.save(achievement)
+    }
+
+    @Transactional
+    fun update(id: Long, form: AchievementForm) {
+        val achievement = form.toEntity(id)
+        achievementRepository.save(achievement)
     }
 }
