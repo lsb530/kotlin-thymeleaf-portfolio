@@ -1,21 +1,8 @@
 package com.boki.kotlinthymeleafportfolio.domain
 
 import com.boki.kotlinthymeleafportfolio.domain.constant.SkillType
-import com.boki.kotlinthymeleafportfolio.domain.entity.Achievement
-import com.boki.kotlinthymeleafportfolio.domain.entity.Experience
-import com.boki.kotlinthymeleafportfolio.domain.entity.ExperienceDetail
-import com.boki.kotlinthymeleafportfolio.domain.entity.Introduction
-import com.boki.kotlinthymeleafportfolio.domain.entity.Link
-import com.boki.kotlinthymeleafportfolio.domain.entity.Project
-import com.boki.kotlinthymeleafportfolio.domain.entity.ProjectDetail
-import com.boki.kotlinthymeleafportfolio.domain.entity.ProjectSkill
-import com.boki.kotlinthymeleafportfolio.domain.entity.Skill
-import com.boki.kotlinthymeleafportfolio.domain.repository.AchievementRepository
-import com.boki.kotlinthymeleafportfolio.domain.repository.ExperienceRepository
-import com.boki.kotlinthymeleafportfolio.domain.repository.IntroductionRepository
-import com.boki.kotlinthymeleafportfolio.domain.repository.LinkRepository
-import com.boki.kotlinthymeleafportfolio.domain.repository.ProjectRepository
-import com.boki.kotlinthymeleafportfolio.domain.repository.SkillRepository
+import com.boki.kotlinthymeleafportfolio.domain.entity.*
+import com.boki.kotlinthymeleafportfolio.domain.repository.*
 import jakarta.annotation.PostConstruct
 import org.slf4j.LoggerFactory
 import org.springframework.context.annotation.Profile
@@ -30,7 +17,8 @@ class DataInitializer(
     private val introductionRepository: IntroductionRepository,
     private val linkRepository: LinkRepository,
     private val projectRepository: ProjectRepository,
-    private val skillRepository: SkillRepository
+    private val skillRepository: SkillRepository,
+    private val accountRepository: AccountRepository
 ) {
 
     val log = LoggerFactory.getLogger(DataInitializer::class.java)
@@ -167,5 +155,11 @@ class DataInitializer(
             )
         )
         projectRepository.saveAll(mutableListOf(project1, project2))
+
+        val account = Account(
+            loginId = "admin1",
+            pw = "\$2a\$10\$BWi6SLqZRJyVvJyufjTtHeYXNNhpNY9rxaVl9fBOE.1t3QF98B.cO"
+        )
+        accountRepository.save(account)
     }
 }
