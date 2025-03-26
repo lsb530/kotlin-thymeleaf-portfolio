@@ -12,7 +12,11 @@
                     <div class="text-center text-xxl-start">
                         <div class="badge bg-gradient-primary-to-secondary text-white mb-4"><div class="text-uppercase">Kotlin &middot; Spring &middot; JPA</div></div>
                         <div class="fs-3 fw-light text-muted">안녕하세요</div>
-                        <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">개발하는 꼬부기입니다.</span></h1>
+                        <h2 class="display-3 fw-bolder mb-5">
+                            <span class="text-gradient d-inline">
+                                개발하는 꼬부기 <br/> 이승복입니다.
+                            </span>
+                        </h2>
                         <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
                             <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="resume">Resume</a>
                             <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="projects">Projects</a>
@@ -23,7 +27,7 @@
                     <!-- Header profile picture-->
                     <div class="d-flex justify-content-center mt-5 mt-xxl-0">
                         <div class="profile bg-gradient-primary-to-secondary">
-                            <img class="profile-img" src="assets/kkobuki.png" alt="..." />
+                            <a href="https://www.qqpr.com/ascii/img/ascii-1021.gif"><img class="profile-img" src="assets/kkobuki.png" alt="..." /></a>
                             <div th:replace="~{presentation/fragments/fragment-dots :: dots1}"></div>
                             <div th:replace="~{presentation/fragments/fragment-dots :: dots2}"></div>
                             <div th:replace="~{presentation/fragments/fragment-dots :: dots3}"></div>
@@ -45,7 +49,9 @@
                         <p class="text-muted" th:each="introduction : ${introductions}" th:text="${introduction.content}">Lorem ipsum dolor sit amet</p>
 
                         <div class="d-flex justify-content-center fs-2 gap-4">
-                            <a class="text-gradient" href="#!" target="_blank" th:each="link : ${links}" th:href="${link.content}"><i class="bi bi-github" th:class="|bi bi-${link.name}|"></i></a>
+                            <a class="text-gradient" href="#!" target="_blank" th:each="link : ${links}" th:href="${link.content}">
+                                <i class="bi bi-github" th:class="|bi bi-${link.name}|"></i>
+                            </a>
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 package com.boki.kotlinthymeleafportfolio.domain.constant
 
 enum class SkillType {
-    LANGUAGE, FRAMEWORK, DATABASE, TOOL
+    LANGUAGE, FRAMEWORK, LIBRARY, DATABASE, TOOL
 }
