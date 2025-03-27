@@ -40,3 +40,4 @@ out/
 .kotlin
 .DS_Store
 docker-compose.yml
+sql/admin.sql
