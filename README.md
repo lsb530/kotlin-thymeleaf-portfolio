@@ -1,7 +1,8 @@
 # Boki's Simple Portfolio
 
 ![Main Page](imgs/boki-dev-index.png)
-<font color="grey">웹사이트에서 꼬부기 이미지를 누르면 좋은 걸 발견할지도...?</font>
+
+<p>$\textcolor{#808080}set\ 웹사이트에서 꼬부기 이미지를 누르면 좋은 걸 발견할지도...?\ color$</p>
 
 개발자 꼬부기 이승복의 포트폴리오 사이트입니다.
 
